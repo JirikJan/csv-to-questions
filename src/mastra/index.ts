@@ -14,11 +14,6 @@ export const mastra = new Mastra({
     csvQuestionAgent,
     csvSummarizationAgent,
   },
-  server: {
-    experimental_auth: new MastraJwtAuth({
-      secret: process.env.MASTRA_JWT_SECRET,
-    }),
-  },
   storage: new LibSQLStore({
     // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
     url: ':memory:',
